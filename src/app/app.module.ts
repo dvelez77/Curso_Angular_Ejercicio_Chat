@@ -6,15 +6,22 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SalaComponent } from './sala/sala.component';
 
+import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './chat/chat.component';
+import { ListasalasComponent } from './listasalas/listasalas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SalaComponent
+    SalaComponent,
+    ChatComponent,
+    ListasalasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

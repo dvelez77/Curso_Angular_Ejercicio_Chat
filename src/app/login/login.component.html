@@ -3,12 +3,11 @@
   <div class="form-group row">
     <label for="txtlUsuario" class="col-sm-1 col-form-label">Usuario:</label>
     <div class="col-sm-5">
-      <input type="usuario" class="form-control" id="txtlUsuario" placeholder="Introduce el nombre del usuario">    
+      <input type="usuario" class="form-control" name="txtUsuario" id="txtUsuario" 
+      placeholder="Introduce el nombre del usuario" [(ngModel)]="sala.autor">    
     </div>
   </div>
-  <button type="button" class="btn btn-secondary" data-toggle="tooltip" 
-    data-placement="bottom" title="Acceder al Chat" routerLink="/sala/{{usuario.idSala}}"
-    [(ngModel)]="usuario.nombre">
-    Acceder 
-  </button>
+  <input type="button" name="btnLogin" class="btn btn-secondary" data-toggle="tooltip" 
+    data-placement="bottom" title="Acceder al Chat"
+   value="Acceder" (click) = "getSala()"  /> 
 </form>

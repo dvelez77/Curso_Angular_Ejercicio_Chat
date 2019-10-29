@@ -1,0 +1,12 @@
+
+{
+    "salas": [
+      { "id": 1, "titulo": "Sala1", "autor": "David" }
+    ],
+    "comentarios": [
+      { "id": 1, "comentario": "Comentario1", "salaId": 1 },
+      { "id": 2, "comentario": "Comentario2", "salaId": 1 },
+      { "id": 3, "comentario": "Comentario2", "salaId": 1 }
+    ],
+    "usuario": { "name": "David" }
+  }

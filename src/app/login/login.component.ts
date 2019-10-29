@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../Usuario'
+import { Sala } from '../sala';
+import { Router, ActivatedRoute, ParamMap} from '@angular/router'; 
+import { SalaService } from '../sala.service';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +10,25 @@ import { Usuario } from '../Usuario'
 })
 export class LoginComponent implements OnInit {
 
-    usuario: Usuario = {
-      id: 1,
-      nombre: '',
-      idSala: 1
+    sala: Sala = {
+      id: 0,
+      titulo: '',
+      autor: ''
     };
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: SalaService
+  ) { }
 
   ngOnInit() {
+  }
+
+  private getSala() {
+    //this.tareaService.getTareas().subscribe(tareasRecibidas => this.tareas = tareasRecibidas);
+    //this.router.navigate([]);
+    this.router.navigate(['/sala/', this.sala.id]);
   }
 
 }
