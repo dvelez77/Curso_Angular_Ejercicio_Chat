@@ -1,12 +1,24 @@
 
 {
     "salas": [
-      { "id": 1, "titulo": "Sala1", "autor": "David" }
+      { "id": 1, "titulo": "Sala1", "autor": "David" },
+      { "id": 2, "titulo": "Sala2", "autor": "Sendoa" },
+      { "id": 3, "titulo": "Sala3", "autor": "Laura" }
     ],
     "comentarios": [
       { "id": 1, "comentario": "Comentario1", "salaId": 1 },
       { "id": 2, "comentario": "Comentario2", "salaId": 1 },
-      { "id": 3, "comentario": "Comentario2", "salaId": 1 }
+      { "id": 3, "comentario": "Comentario3", "salaId": 1 },
+      { "id": 4, "comentario": "Comentario4", "salaId": 2 },
+      { "id": 5, "comentario": "Comentario5", "salaId": 2 },
+      { "id": 6, "comentario": "Comentario6", "salaId": 2 },
+      { "id": 7, "comentario": "Comentario7", "salaId": 3 },
+      { "id": 8, "comentario": "Comentario8", "salaId": 3 },
+      { "id": 9, "comentario": "Comentario9", "salaId": 3 }
     ],
-    "usuario": { "name": "David" }
+    "usuarios": [
+      { "id": 1 ,"name": "David" },
+      { "id": 1 ,"name": "Sendoa" },
+      { "id": 1 ,"name": "Laura" }
+    ]
   }
