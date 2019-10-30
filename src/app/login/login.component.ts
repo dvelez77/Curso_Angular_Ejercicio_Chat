@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Sala } from '../sala';
+import { Usuario } from '../Usuario';
 import { Router, ActivatedRoute, ParamMap} from '@angular/router';
 import { SalaService } from '../sala.service';
 import { Subscription } from 'rxjs';
@@ -11,10 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-    sala: Sala = {
-      id: 0,
-      titulo: '',
-      autor: ''
+    usuario: Usuario = {
+      nombre: ''
     };
 
     salas: Sala[];
@@ -40,14 +39,16 @@ export class LoginComponent implements OnInit, OnDestroy {
         salasRecibidas => {
           this.salas = salasRecibidas;
           if (this.salas.length > 0) {
-            const salaUsuario = this.salas.find(item => item.autor === this.sala.autor);
+            const salaUsuario = this.salas.find(item => item.autor === this.usuario.nombre);
             if (salaUsuario != null) {
               this.router.navigate(['/sala/', salaUsuario.id]);
             } else {
               alert('no se encontraron salas para el usuario');
+              // TODO -> Crear usuario y enviarle a la sala por defecto
             }
           } else {
             alert('no se encontraron salas para el usuario');
+            // TODO -> Crear usuario y enviarle a la sala por defecto
           }
         }
     );

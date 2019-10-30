@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Comentario } from '../Comentario';
+import { Router, ActivatedRoute, ParamMap} from '@angular/router';
+import { SalaService } from '../sala.service';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-new-comment',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCommentComponent implements OnInit {
 
-  constructor() { }
+  comentario: Comentario;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private salaService: SalaService
+  ) { }
 
   ngOnInit() {
   }
 
+  sendComment() {
+    this.salaService.sendComentario(this.comentario).subscribe(
+      comentarioRecibido => this.comentario = comentarioRecibido
+    );
+  }
 }
