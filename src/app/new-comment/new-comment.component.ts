@@ -11,7 +11,11 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class NewCommentComponent implements OnInit {
 
-  comentario: Comentario;
+  cm: Comentario = {
+    id: 0,
+    comentario: '',
+    salaId: 1
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +27,8 @@ export class NewCommentComponent implements OnInit {
   }
 
   sendComment() {
-    this.salaService.sendComentario(this.comentario).subscribe(
-      comentarioRecibido => this.comentario = comentarioRecibido
+    this.salaService.sendComentario(this.cm).subscribe(
+      comentarioRecibido => this.cm = { id: 0, comentario: '', salaId: 1 }
     );
   }
 }
